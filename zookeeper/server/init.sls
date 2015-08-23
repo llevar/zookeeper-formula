@@ -15,7 +15,8 @@ include:
     - user: zookeeper
     - group: zookeeper
     - makedirs: True
-
+  require:
+    - sls: zookeeper
 move-zookeeper-dist-conf:
   cmd.run:
     - name: mv {{ zk.real_home }}/conf {{ zk.real_config }}
